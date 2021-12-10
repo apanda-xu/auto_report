@@ -68,7 +68,10 @@ def report():
         driver.find_element_by_name("submit").click()
         # the information of health will be save if you have been filled the form. So, we don't need to care that.
         # submit
-        driver.find_element_by_xpath('//*[@id="tz_div"]/div[2]/button[2]').click()
+        try:
+            driver.find_element_by_xpath('//*[@id="tz_div"]/div[2]/button[2]').click()
+        except:
+            pass
         driver.find_element_by_link_text("每日填报").click()
         driver.find_element_by_link_text("提交填报信息").click()
         driver.find_element_by_xpath(
